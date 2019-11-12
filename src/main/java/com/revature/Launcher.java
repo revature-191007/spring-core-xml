@@ -9,9 +9,7 @@ public class Launcher {
 	public static void main(String[] args) {
 		ApplicationContext applicationContext =
 				new ClassPathXmlApplicationContext("beans.xml");
-		
-		Phone phone = applicationContext.getBean(Phone.class);
-		System.out.println(phone);
+
 	}
 }
 

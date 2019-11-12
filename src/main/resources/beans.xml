@@ -38,6 +38,9 @@
 		<property name="name" value="IOS" />
 		<property name="version" value="10.57" />
 	</bean>
+	
+	<bean id="lifecycle" class="com.revature.models.Lifecycle">
+	</bean>
 </beans>
 
 
