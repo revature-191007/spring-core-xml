@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd"
+	default-init-method="defaultInit"
+	default-destroy-method="defaultDestroy">
+
+	<bean id="nokia" class="com.revature.models.Phone" primary="true"
+		scope="prototype" autowire="byName">
+		<property name="brand" value="Nokia" />
+		<property name="id" value="1" />
+		<property name="modelName" value="Nokia 3310" />
+		<property name="phoneNumber" value="1234567890" />
+		<property name="serviceProvider" value="Sprint" />
+	</bean>
+
+	<bean id="iphone" class="com.revature.models.Phone">
+		<property name="brand" value="Apple" />
+		<property name="id" value="2" />
+		<property name="modelName" value="XS 10S PRO 2++" />
+		<property name="phoneNumber" value="8138675309" />
+		<property name="serviceProvider" value="ATT" />
+		<property name="nokiaOS" ref="ios" />
+	</bean>
+
+	<bean id="nokiaOS" class="com.revature.models.OS" lazy-init="true">
+		<property name="id" value="1" />
+		<property name="developer" value="Microsoft" />
+		<property name="name" value="Microsoft Bob" />
+		<property name="version" value="0.0.1" />
+	</bean>
+
+	<bean id="ios" class="com.revature.models.OS">
+		<property name="id" value="2" />
+		<property name="developer" value="Apple" />
+		<property name="name" value="IOS" />
+		<property name="version" value="10.57" />
+	</bean>
+</beans>
+
+
